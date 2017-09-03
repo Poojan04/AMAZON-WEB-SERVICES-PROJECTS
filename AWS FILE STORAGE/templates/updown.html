@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <table>
+ <tr>
+        <th></th>
+        <th>Upload or Download Files to Bluemix</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>Upload Files</td>
+        <td><form id="Up" action="./uploads" method="POST" enctype="multipart/form-data" >
+            <input type = "file" name="file" accept="uploaded_files/*" multiple >
+            <input type= "submit" name="upload" value="upload" > </form></td>
+  
+   <tr>
+       <td>Delete File ...</td>
+       <td>
+           <form id="del" action="./delete" method="POST">
+            <input type="text" name="file">
+            <input type="submit" name="Delete" value="Delete">
+           </form>
+       </td>
+{#       <td>#}
+{#           <form id="delete_form" action="./delete" method="POST">#}
+{#             File Name: <input type="text" name="filename" placeholder="Enter file name"><br><br>#}
+{#             <input type="submit" name="delete" value="delete">#}
+{#           </form>#}
+{#       </td>#}
+
+   </tr>
+   </table>
+   </table>
+   <table>
+       {% for obj in listobj %}
+     <tr>
+        <td>{{obj.Key}}</td>
+         <td>{{obj.Size}}</td>
+   <td>    <a href="https://s3.us-east-2.amazonaws.com/buck1pooja/{{obj.Key}}"> DOWNLOAD</a>
+</td>
+     </tr>
+       {% endfor %}
+
+   </table>
+1
+</body>
+{#<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->#}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">#}
+{#        </script>#}
+{#<script>#}
+{#    function deleteFile(){#}
+{#        var fName = document.getElementById('delete_file').value;#}
+{#        alert(fName);#}
+{#            $.ajax({#}
+{#              type: "GET",#}
+{#              url: "./delete?file="+fName#}
+{#            }).done(function( o ) {#}
+{#                document.getElementById('file_content').innerHTML = o;#}
+{#            });#}
+{#        }#}
+{#</script>#}
+
+</html>
