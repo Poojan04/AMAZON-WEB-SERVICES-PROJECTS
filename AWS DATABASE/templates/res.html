@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <table>
+       {% for obj in result %}
+     <tr>
+        <td>{{obj.longitude}}</td>
+         <td>{{obj.latitude}}</td>
+  
+     </tr>
+       {% endfor %}
+
+   </table>
+
+
+{{result}}
+</body>
+</html>
