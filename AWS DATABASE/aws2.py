@@ -10,7 +10,7 @@ import sys
 app = Flask(__name__)
 
 db=pymysql.connect(host="dbinspooja.czd77famuj50.us-east-2.rds.amazonaws.com",user="root",
-                  passwd="adminadmin",db="testdb",port=3306,local_infile=True,charset='utf8'
+                  passwd="",db="testdb",port=3306,local_infile=True,charset='utf8'
                    ,cursorclass=pymysql.cursors.DictCursor)
 
 
